@@ -8,7 +8,9 @@
                 <div class="panel-heading">Usuários</div>
 
                 <div class="panel-body">
-                    Your Application's Landing Page.
+                    @foreach($users as $user)
+                        {{ $user->username }} <br>
+                    @endforeach
                 </div>
             </div>
         </div>
