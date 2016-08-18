@@ -114,5 +114,10 @@
             "color": "#C0C0C0"
         });
     </script>
+    <script>    
+        $("#telefone").mask("(99) 9999-9999");
+        $("#rg").mask("99.999.999-9");
+        $("#cpf").mask("999.999.999-99");
+    </script>
 </body>
 </html>
