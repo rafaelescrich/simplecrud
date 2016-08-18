@@ -78,5 +78,46 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+
+    <script language="javascript" type="text/javascript">
+        $("#searchInput").keyup(function () {
+            //split the current value of searchInput
+            var data = this.value.split(" ");
+            //create a jquery object of the rows
+            var jo = $("#fbody").find("tr");
+            if (this.value == "") {
+                jo.show();
+                return;
+            }
+            //hide all the rows
+            jo.hide();
+
+            //Recusively filter the jquery object to get results.
+            jo.filter(function (i, v) {
+                var $t = $(this);
+                for (var d = 0; d < data.length; ++d) {
+                    if ($t.is(":contains('" + data[d] + "')")) {
+                        return true;
+                    }
+                }
+                return false;
+            })
+            //show the rows that match.
+            .show();
+        }).focus(function () {
+            this.value = "";
+            $(this).css({
+                "color": "black"
+            });
+            $(this).unbind('focus');
+        }).css({
+            "color": "#C0C0C0"
+        });
+    </script>
+    <script>    
+        $("#telefone").mask("(99) 9999-9999");
+        $("#rg").mask("99.999.999-9");
+        $("#cpf").mask("999.999.999-99");
+    </script>
 </body>
 </html>

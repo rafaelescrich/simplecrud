@@ -14,6 +14,11 @@
                 <div class="panel-heading">Usuários</div>
 
                 <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-6">Filtro por nome do usuário:</div>
+                        <div class="col-md-6"><input type="text" class="form-control" id="searchInput"/></div>
+                    </div>
+                    <br>
                     <table class="table">
                         <tr>
                             <th>Username</th>
@@ -24,6 +29,7 @@
                             <th>RG</th>
                             <th>Ações</th>
                         </tr>
+                        <tbody id="fbody">
                         @foreach($users as $user)
                             <tr>
                                 <td>{{ $user->username }}</td>
@@ -43,6 +49,7 @@
                                 </td>
                             </tr>
                         @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>
