@@ -39,8 +39,13 @@ php composer-setup.php
 php -r "unlink('composer-setup.php');"
 sudo mv composer.phar /usr/local/bin/composer
 ```
+Agora baixe o código do projeto para a máquina.
 
-Dentro da pasta do projeto instalar todas a bibliotecas
+```bash
+git clone git@github.com:rafaelescrich/simplecrud.git
+```
+
+Dentro da pasta do simplecrud instalar todas a bibliotecas
 
 ```bash
 composer update
